@@ -8,9 +8,9 @@ Welcome to Heximod's source code!
 //1. SETUP AND INSTANTIATION
 //---------------------------
 
-//IMPORTANT: Make sure to load Pixi and the modules before instantiating Hexi!
+//IMPORTANT: Make sure to load Pixi and the modules before instantiating Heximod!
 
-//The high level `hexi` function lets you quickly create an instance
+//The high level heximod function lets you quickly create an instance
 //of Hexi using sensible defaults.
 function heximod(pixi, o) {
   let hexi = new Hexi(
