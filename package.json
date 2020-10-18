@@ -1,0 +1,30 @@
+{
+  "name": "heximod",
+  "version": "1.0.0",
+  "description": "hexi-fork, a portable design approach.",
+  "main": "index.js",
+  "dependencies": {
+    "@babel/cli": "^7.11.6",
+    "@babel/core": "^7.11.6",
+    "@babel/preset-env": "^7.11.5",
+    "concat": "^1.0.3",
+    "fs-extra": "^9.0.1",
+    "uglify-es": "^3.3.9"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "minify": "uglifyjs \"dist/heximod.js\" -o \"dist/heximod.min.js\" -c -m --source-map \"filename=heximod.min.map.js\" && echo \"minified success!\"",
+    "babel-es5": "babel \"src/heximod.js\" --out-file \"dist/heximod.js\" && echo \" babel-es5 success!\"",
+    "build": "npm run babel-es5 && npm run minify && echo \"build done!\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smiley405/heximod.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/smiley405/heximod/issues"
+  },
+  "homepage": "https://github.com/smiley405/heximod#readme"
+}
