@@ -13,7 +13,8 @@ Welcome to Heximod's source code!
 /**
 * The high level heximod function lets you quickly create an instance
 * of Hexi using sensible defaults.
-* @param {object} [o] - Takes Hexi constructor param. See, Hexi class constructor below;
+* @param {object} [o] - Takes Hexi constructor param. See, Hexi class constructor below
+* @returns {object} - Hexi 
 */
 function heximod(o) {
   let hexi = new Hexi(o);
