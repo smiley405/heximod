@@ -143,4 +143,4 @@ For manual build:
 - Install node.
 - Open terminal/cmd, Run [`npm install`] in root directory.
 - And do [`npm run build`].
-- Built files will be in dir folder
+- Built files will be in dist folder.
