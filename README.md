@@ -26,7 +26,7 @@ Quick start
 ----------------
 
 The only file you need to start using Heximod is
-[`heximod.min.js`](). It has an incredibly simple "installation": Just link it to an HTML page with a `<script>` tag. Then link your main JavaScript file that will contain your game or application code. Here's what a typical Hexi HTML container page might look like:
+[`heximod.min.js`]. It has an incredibly simple "installation": Just link it to an HTML page with a `<script>` tag. Then link your main JavaScript file that will contain your game or application code. Here's what a typical Hexi HTML container page might look like:
 ```html
 <!doctype html>
 <meta charset="utf-8">
@@ -140,6 +140,6 @@ function play(data){
 For manual build:
 - Clone Repo.
 - Install node.
-- Open terminal/cmd, Run [`npm install`]() in root directory.
-- And do [`npm run build`]().
+- Open terminal/cmd, Run [`npm install`] in root directory.
+- And do [`npm run build`].
 - Built files will be in dir folder
