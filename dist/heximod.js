@@ -14,18 +14,17 @@ Welcome to Heximod's source code!
 */
 //1. SETUP AND INSTANTIATION
 //---------------------------
-//IMPORTANT: Make sure to load Pixi and the modules before instantiating Hexi!
-//The high level `hexi` function lets you quickly create an instance
+//IMPORTANT: Make sure to load Pixi and the modules before instantiating Heximod!
+//The high level heximod function lets you quickly create an instance
 //of Hexi using sensible defaults.
-function heximod(pixi, o) {
-  var hexi = new Hexi( // specific version of Pixi that you want to use.
-  PIXI, {
-    // All the PIXI.Application (options) are valid
-    pixiSettings: o.pixiSettings,
-    setup: o.setup,
-    assets: o.assets,
-    load: o.load
-  });
+
+/**
+* 
+* @param {object} [o] - Takes Hexi constructor param. See, Hexi class constructor below;
+*/
+function heximod(o) {
+  var hexi = new Hexi(o);
+  hexi.mod = "0.1";
   return hexi;
 } //2. THE HEXI CLASS CONSTRUCTOR
 //----------------------------
@@ -36,18 +35,32 @@ var Hexi = /*#__PURE__*/function () {
   Initialize Hexi's constructor with an options object literal called `o`.
   Here are the required options:
   */
-  function Hexi(pixi, o) {
+
+  /**
+   * 
+   * @param {object} [o] - options
+   * ==============================
+   * @param {object} [o.pixi] - PIXI version- optional
+   * @param {object} [o.settings] - PIXI.Application (options) And,
+   * @param {object} [o.settings.viewContainer] - canvas to append inside
+   * @param {array} [o.assets] - assets to load
+   * @param {function} [o.setup] - on setup function
+   * @param {function} [o.load] - on progress load function
+   * @param {string} [o.border] - css color 
+   */
+  function Hexi(o) {
     var _this = this;
 
     _classCallCheck(this, Hexi);
 
-    //Create local aliases for the important methods and properties of
+    o.pixi = o.pixi !== undefined ? o.pixi : PIXI; //Create local aliases for the important methods and properties of
     //these libraries, including the most useful Pixi properties.
     //Take a look at Hexi's `createModulePropertyAliases` method in the
     //source code ahead to see how this works
-    this.createModulePropertyAliases(pixi); //Create the stage and renderer
 
-    this.app = new this.pixi.Application(o.pixiSettings); //Get a reference to the `renderer.view`, which is the
+    this.createModulePropertyAliases(o.pixi); //Create the stage and renderer
+
+    this.app = new this.pixi.Application(o.settings); //Get a reference to the `renderer.view`, which is the
     //HTML canvas element
 
     this.canvas = this.app.view; //Add `halfWidth` and `halfHeight` properties to the canvas
@@ -73,8 +86,8 @@ var Hexi = /*#__PURE__*/function () {
 
     if (o.border) this.canvas.style.border = o.border;
 
-    if (o.pixiSettings.viewContainer) {
-      o.pixiSettings.viewContainer.appendChild(this.canvas);
+    if (o.settings.viewContainer) {
+      o.settings.viewContainer.appendChild(this.canvas);
     } else {
       document.body.appendChild(this.canvas);
     } //Create a container object called the `stage`

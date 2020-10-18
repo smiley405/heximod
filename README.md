@@ -53,11 +53,12 @@ And Here's what this actually looks like in real code:
 
 //Initialize and start Heximod
 let g = heximod(
-    //An advantage to doing this is that it lets you use your own custom build of Pixi, or a
-    //specific version of Pixi that you want to use.
-    PIXI,
     {
-        pixiSettings:{
+        //An advantage to doing this is that it lets you use your own custom build of Pixi, or a
+        //specific version of Pixi that you want to use.
+        // Optional
+        pixi: PIXI,
+        settings:{
             // All the PIXI.Application (options) are valid
             width: 550,
             height: 400
