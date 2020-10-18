@@ -140,6 +140,6 @@ function play(data){
 For manual build:
 - Clone Repo.
 - Install node.
-- Run npm install in root directory.
-- Run npm build.
+- Open terminal/cmd, Run [`npm install`]() in root directory.
+- And do [`npm run build`]().
 - Built files will be in dir folder
