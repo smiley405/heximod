@@ -56,8 +56,8 @@ let g = heximod(
     {
         //An advantage to doing this is that it lets you use your own custom build of Pixi, or a
         //specific version of Pixi that you want to use.
-        // Optional
-        pixi: PIXI,
+        pixi: PIXI, // Optional
+        
         settings:{
             // All the PIXI.Application (options) are valid
             width: 550,
@@ -74,8 +74,7 @@ let g = heximod(
             "sounds/music.mp3"
         ],
         setup,
-        // Optional
-        load
+        load // Optional
 });
 g.start();
 
